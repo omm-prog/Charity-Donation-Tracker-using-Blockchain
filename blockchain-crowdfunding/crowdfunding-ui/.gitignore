@@ -1,0 +1,37 @@
+# Node dependencies
+node_modules/
+
+# Build outputs
+build/
+dist/
+
+# Sensitive credentials
+blockchain-crowdfunding/backend/firebasecredentials.json
+
+# Environment files
+.env
+.env.*
+
+# VS Code settings
+.vscode/
+
+# Logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# System files
+.DS_Store
+
+# Archives
+*.7z
+*.zip
+*.rar
+
+# Firebase security rules
+firestore.rules
+storage.rules
+
+# Truffle (optional)
+migrations/
+test/
