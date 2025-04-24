@@ -1,0 +1,520 @@
+.ngo-profile-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+  position: relative;
+  z-index: 1;
+}
+
+/* Add a wrapper for the entire profile view */
+.profile-wrapper {
+  padding-top: 80px; /* Height of the navbar */
+  min-height: 100vh;
+  background-color: #f5f5f5;
+}
+
+.ngo-profile-loading {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 400px;
+}
+
+.loader {
+  border: 4px solid #f3f3f3;
+  border-top: 4px solid #3498db;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.ngo-profile-error {
+  text-align: center;
+  padding: 2rem;
+  color: #e74c3c;
+}
+
+.profile-header {
+  text-align: center;
+  margin-bottom: 2rem;
+  padding: 2rem;
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  position: relative;
+  z-index: 2;
+}
+
+.ngo-logo {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 1.5rem;
+  border: 4px solid #4CAF50;
+}
+
+.ngo-logo-placeholder {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #4CAF50 0%, #45a049 100%);
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 3.5rem;
+  font-weight: bold;
+  margin: 0 auto 1.5rem;
+  text-transform: uppercase;
+  box-shadow: 0 4px 15px rgba(76, 175, 80, 0.2);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.ngo-logo-placeholder:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 20px rgba(76, 175, 80, 0.3);
+}
+
+.profile-header h1 {
+  font-size: 2.8rem;
+  color: #2c3e50;
+  margin-bottom: 0.5rem;
+  font-weight: bold;
+}
+
+.founding-year {
+  color: #666;
+  font-size: 1.1rem;
+  margin-bottom: 1.5rem;
+  font-weight: 500;
+}
+
+.social-links {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  margin-top: 1rem;
+}
+
+.social-links a {
+  color: #4CAF50;
+  font-size: 1.5rem;
+  transition: transform 0.3s ease;
+}
+
+.social-links a:hover {
+  transform: translateY(-3px);
+}
+
+/* Update profile tabs to be sticky */
+.profile-tabs {
+  position: sticky;
+  top: 80px; /* Height of the navbar */
+  background: white;
+  padding: 1rem;
+  margin: 0 auto 2rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  z-index: 10;
+  display: flex;
+  gap: 1rem;
+  overflow-x: auto;
+  max-width: 1200px;
+}
+
+.tab-button {
+  padding: 0.75rem 1.5rem;
+  background: white;
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+  font-size: 1rem;
+  color: #666;
+  transition: all 0.3s ease;
+  white-space: nowrap;
+}
+
+.tab-button:hover {
+  background: #e8f5e9;
+  color: #4CAF50;
+}
+
+.tab-button.active {
+  background: #4CAF50;
+  color: white;
+}
+
+.profile-content {
+  position: relative;
+  z-index: 1;
+}
+
+section {
+  background: white;
+  border-radius: 8px;
+  padding: 2rem;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+section h2 {
+  color: #2c3e50;
+  margin-bottom: 1.5rem;
+  font-size: 1.8rem;
+  border-bottom: 2px solid #4CAF50;
+  padding-bottom: 0.5rem;
+}
+
+.mission-vision {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.mission h3,
+.vision h3 {
+  color: #4CAF50;
+  margin-bottom: 1rem;
+}
+
+.contact-info {
+  display: grid;
+  gap: 1rem;
+}
+
+.contact-item {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 0.75rem;
+  background: #f8f9fa;
+  border-radius: 8px;
+  color: #2c3e50;
+  text-decoration: none;
+}
+
+.contact-item svg {
+  color: #4CAF50;
+  font-size: 1.2rem;
+}
+
+.causes-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+.cause-tag {
+  background-color: #e8f5e9;
+  color: #4CAF50;
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+.projects-grid,
+.impact-metrics-grid,
+.team-grid,
+.partners-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1.5rem;
+}
+
+.project-card,
+.impact-metric-card,
+.team-member-card,
+.partner-card {
+  background: #f8f9fa;
+  border-radius: 8px;
+  padding: 1.5rem;
+  transition: transform 0.3s ease;
+}
+
+.project-card:hover,
+.impact-metric-card:hover,
+.team-member-card:hover,
+.partner-card:hover {
+  transform: translateY(-5px);
+}
+
+.project-status {
+  display: flex;
+  gap: 1rem;
+  margin-top: 1rem;
+  font-size: 0.9rem;
+  color: #666;
+}
+
+.metric-value {
+  font-size: 2.5rem;
+  color: #4CAF50;
+  font-weight: bold;
+  margin: 1rem 0;
+}
+
+.team-member-card img,
+.partner-card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 8px;
+  margin-bottom: 1rem;
+}
+
+.member-role {
+  color: #4CAF50;
+  font-weight: 500;
+  margin: 0.5rem 0;
+}
+
+.testimonials-section {
+  display: grid;
+  gap: 1.5rem;
+}
+
+.testimonial-card {
+  background: #f8f9fa;
+  border-radius: 8px;
+  padding: 2rem;
+  position: relative;
+  transition: transform 0.3s ease;
+}
+
+.testimonial-card:hover {
+  transform: translateY(-5px);
+}
+
+.testimonial-text {
+  font-size: 1.1rem;
+  font-style: italic;
+  color: #2c3e50;
+  margin-bottom: 1.5rem;
+  line-height: 1.6;
+  position: relative;
+}
+
+.testimonial-text::before {
+  content: '"';
+  font-size: 4rem;
+  color: #4CAF50;
+  opacity: 0.2;
+  position: absolute;
+  left: -1rem;
+  top: -1rem;
+  font-family: Georgia, serif;
+}
+
+.testimonial-author {
+  color: #666;
+  font-size: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.testimonial-author strong {
+  color: #4CAF50;
+}
+
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 1rem;
+}
+
+.gallery-grid img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 8px;
+  transition: transform 0.3s ease;
+  cursor: pointer;
+}
+
+.gallery-grid img:hover {
+  transform: scale(1.05);
+}
+
+.legal-info {
+  background: #f8f9fa;
+  padding: 1.5rem;
+  border-radius: 8px;
+}
+
+.legal-info p {
+  margin: 0.5rem 0;
+}
+
+.donation-needs,
+.volunteer-opportunities {
+  margin-top: 2rem;
+  padding: 1.5rem;
+  background: #f8f9fa;
+  border-radius: 8px;
+}
+
+.error-container,
+.not-found-container {
+  text-align: center;
+  padding: 3rem;
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  margin: 2rem auto;
+  max-width: 600px;
+}
+
+.error-container h3,
+.not-found-container h3 {
+  color: #e74c3c;
+  margin-bottom: 1rem;
+}
+
+.partner-card {
+  background: #f8f9fa;
+  border-radius: 8px;
+  padding: 1.5rem;
+  transition: transform 0.3s ease;
+  display: flex;
+  flex-direction: column;
+}
+
+.partner-card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 8px;
+  margin-bottom: 1rem;
+}
+
+.partner-card h3 {
+  color: #2c3e50;
+  margin-bottom: 0.5rem;
+}
+
+.partner-card p {
+  color: #666;
+  margin-bottom: 1rem;
+  flex-grow: 1;
+}
+
+.partner-link {
+  display: inline-block;
+  padding: 0.5rem 1rem;
+  background: #4CAF50;
+  color: white;
+  text-decoration: none;
+  border-radius: 20px;
+  text-align: center;
+  transition: all 0.3s ease;
+}
+
+.partner-link:hover {
+  background: #388E3C;
+  transform: translateY(-2px);
+}
+
+.impact-metric-card {
+  background: #f8f9fa;
+  border-radius: 8px;
+  padding: 1.5rem;
+  text-align: center;
+  transition: transform 0.3s ease;
+}
+
+.impact-metric-card h3 {
+  color: #2c3e50;
+  margin-bottom: 1rem;
+  font-size: 1.2rem;
+}
+
+.metric-value {
+  font-size: 2.5rem;
+  color: #4CAF50;
+  font-weight: bold;
+  margin: 0.5rem 0;
+}
+
+@media (max-width: 768px) {
+  .profile-wrapper {
+    padding-top: 60px; /* Smaller navbar height on mobile */
+  }
+
+  .profile-tabs {
+    top: 60px;
+    padding: 0.75rem;
+  }
+
+  .ngo-profile-container {
+    padding: 1rem;
+  }
+
+  .profile-header {
+    padding: 1.5rem;
+  }
+
+  .profile-header h1 {
+    font-size: 2rem;
+  }
+
+  .ngo-logo,
+  .ngo-logo-placeholder {
+    width: 120px;
+    height: 120px;
+  }
+
+  .tab-button {
+    padding: 0.5rem 1rem;
+    font-size: 0.9rem;
+  }
+
+  section {
+    padding: 1.5rem;
+  }
+
+  .mission-vision {
+    grid-template-columns: 1fr;
+  }
+
+  .projects-grid,
+  .impact-metrics-grid,
+  .team-grid,
+  .partners-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .gallery-grid {
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  }
+
+  .testimonial-card {
+    padding: 1.5rem;
+  }
+
+  .testimonial-text {
+    font-size: 1rem;
+  }
+
+  .ngo-logo-placeholder {
+    width: 90px;
+    height: 90px;
+    font-size: 2.5rem;
+  }
+}
+
+/* Add styles for the main content area */
+main {
+  min-height: calc(100vh - 80px);
+  padding-top: 80px;
+  background-color: #f5f5f5;
+} 

@@ -1,0 +1,402 @@
+.proof-form-container {
+  background-color: #ffffff;
+  border-radius: 8px;
+  padding: 24px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.proof-form-title {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 16px;
+  text-align: center;
+}
+
+.proof-form-description {
+  font-size: 0.9rem;
+  color: #666;
+  margin-bottom: 24px;
+  text-align: center;
+}
+
+.proof-form-field {
+  margin-bottom: 20px;
+}
+
+.proof-form-label {
+  display: block;
+  font-weight: 500;
+  margin-bottom: 8px;
+  color: #444;
+}
+
+.proof-form-input {
+  width: 100%;
+  padding: 10px 12px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 1rem;
+  transition: border-color 0.2s;
+}
+
+.proof-form-input:focus {
+  outline: none;
+  border-color: #3182ce;
+  box-shadow: 0 0 0 1px #3182ce;
+}
+
+.proof-form-textarea {
+  width: 100%;
+  min-height: 100px;
+  padding: 10px 12px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 1rem;
+  resize: vertical;
+  transition: border-color 0.2s;
+}
+
+.proof-form-textarea:focus {
+  outline: none;
+  border-color: #3182ce;
+  box-shadow: 0 0 0 1px #3182ce;
+}
+
+.proof-file-input {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+  border: 2px dashed #ddd;
+  border-radius: 4px;
+  background-color: #f9f9f9;
+  transition: all 0.2s;
+  cursor: pointer;
+}
+
+.proof-file-input:hover {
+  border-color: #3182ce;
+  background-color: #f0f7ff;
+}
+
+.proof-file-input input[type="file"] {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  cursor: pointer;
+}
+
+.proof-file-icon {
+  color: #3182ce;
+  font-size: 24px;
+  margin-bottom: 8px;
+}
+
+.proof-file-text {
+  font-size: 0.9rem;
+  color: #666;
+  text-align: center;
+}
+
+.proof-preview {
+  margin-top: 16px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.proof-preview-image {
+  max-width: 100%;
+  max-height: 200px;
+  border-radius: 4px;
+  object-fit: contain;
+  margin-bottom: 8px;
+  border: 1px solid #eee;
+}
+
+.proof-preview-filename {
+  font-size: 0.9rem;
+  color: #666;
+}
+
+.proof-form-submit {
+  display: block;
+  width: 100%;
+  padding: 12px;
+  background-color: #3182ce;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.proof-form-submit:hover {
+  background-color: #2c5282;
+}
+
+.proof-form-submit:disabled {
+  background-color: #9ab2d3;
+  cursor: not-allowed;
+}
+
+.proof-form-error {
+  color: #e53e3e;
+  font-size: 0.9rem;
+  margin-top: 8px;
+}
+
+.proof-form-success {
+  color: #38a169;
+  font-size: 0.9rem;
+  margin-top: 8px;
+  text-align: center;
+}
+
+.proof-form-progress {
+  margin-top: 16px;
+  height: 4px;
+  width: 100%;
+  background-color: #edf2f7;
+  border-radius: 2px;
+  overflow: hidden;
+}
+
+.proof-form-progress-bar {
+  height: 100%;
+  background-color: #3182ce;
+  border-radius: 2px;
+  transition: width 0.3s ease;
+}
+
+.file-size-limit {
+  font-size: 0.8rem;
+  color: #718096;
+  margin-top: 4px;
+}
+
+.proof-submission-form {
+  background-color: #ffffff;
+  border-radius: 8px;
+  padding: 1.5rem;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+  margin-bottom: 2rem;
+}
+
+.proof-submission-form h3 {
+  margin-top: 0;
+  margin-bottom: 0.75rem;
+  font-size: 1.25rem;
+  color: #333;
+}
+
+.form-description {
+  display: flex;
+  align-items: center;
+  font-size: 0.9rem;
+  color: #666;
+  margin-bottom: 1.5rem;
+  background-color: #f7f9fc;
+  padding: 0.75rem;
+  border-radius: 6px;
+  border-left: 3px solid #3498db;
+}
+
+.info-icon {
+  margin-right: 0.5rem;
+  color: #3498db;
+  font-size: 1rem;
+}
+
+.success-message, .error-message {
+  margin-bottom: 1rem;
+  padding: 0.75rem;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+}
+
+.success-message {
+  background-color: #e8f7ee;
+  border-left: 3px solid #2ecc71;
+  color: #27ae60;
+}
+
+.error-message {
+  background-color: #feeaeb;
+  border-left: 3px solid #e74c3c;
+  color: #c0392b;
+}
+
+.success-icon {
+  margin-right: 0.5rem;
+}
+
+.form-group {
+  margin-bottom: 1.25rem;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: 500;
+  color: #555;
+}
+
+.form-group textarea {
+  width: 100%;
+  padding: 0.75rem;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  resize: vertical;
+  font-family: inherit;
+  font-size: 0.9rem;
+}
+
+.form-group textarea:focus {
+  outline: none;
+  border-color: #3498db;
+  box-shadow: 0 0 0 2px rgba(52, 152, 219, 0.2);
+}
+
+.file-input-container {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.file-input-button {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  background-color: #f4f6f8;
+  border: 1px dashed #ccc;
+  padding: 0.75rem 1rem;
+  border-radius: 4px;
+  cursor: pointer;
+  overflow: hidden;
+  transition: all 0.2s ease;
+  width: fit-content;
+}
+
+.file-input-button:hover {
+  background-color: #e8eaed;
+  border-color: #aaa;
+}
+
+.file-input-button input[type="file"] {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  cursor: pointer;
+}
+
+.file-input-button .paperclip-icon {
+  margin-right: 0.5rem;
+  color: #666;
+}
+
+.file-info {
+  min-height: 24px;
+  color: #666;
+}
+
+.selected-file {
+  display: flex;
+  align-items: center;
+  background-color: #f4f6f8;
+  padding: 0.5rem 0.75rem;
+  border-radius: 4px;
+  font-size: 0.85rem;
+}
+
+.file-name {
+  font-weight: 500;
+  color: #444;
+  margin-right: 0.5rem;
+}
+
+.file-size {
+  color: #777;
+  font-size: 0.8rem;
+}
+
+.remove-file-btn {
+  margin-left: auto;
+  background: none;
+  border: none;
+  color: #777;
+  cursor: pointer;
+  padding: 0.25rem;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.remove-file-btn:hover {
+  background-color: #e0e0e0;
+  color: #555;
+}
+
+.file-preview {
+  margin-bottom: 1.25rem;
+  border-radius: 6px;
+  overflow: hidden;
+  border: 1px solid #ddd;
+  max-width: 300px;
+}
+
+.file-preview img {
+  width: 100%;
+  display: block;
+  object-fit: contain;
+}
+
+.submit-btn {
+  background-color: #3498db;
+  color: white;
+  border: none;
+  padding: 0.75rem 1.5rem;
+  border-radius: 4px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.submit-btn:hover:not(:disabled) {
+  background-color: #2980b9;
+}
+
+.submit-btn:disabled {
+  background-color: #a0c6e2;
+  cursor: not-allowed;
+}
+
+.no-file {
+  font-style: italic;
+  color: #888;
+  font-size: 0.85rem;
+}
+
+@media (max-width: 576px) {
+  .proof-submission-form {
+    padding: 16px;
+  }
+  
+  .submit-btn {
+    width: 100%;
+  }
+} 

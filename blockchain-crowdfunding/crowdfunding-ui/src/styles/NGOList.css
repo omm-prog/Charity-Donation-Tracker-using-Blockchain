@@ -1,0 +1,579 @@
+/* NGOList.css - Optimized & Enhanced */
+:root {
+  /* Color variables */
+  --primary-gradient: linear-gradient(135deg, #6c5ce7, #00cec9);
+  --secondary-gradient: linear-gradient(90deg, #3498db, #9b59b6);
+  --text-primary: #2c3e50;
+  --text-secondary: #7f8c8d;
+  --text-light: #e2e8f0;
+  --bg-light: #f5f7fa;
+  --bg-dark: #2d3748;
+  --accent-purple: #6c5ce7;
+  --accent-blue: #3498db;
+  --shadow-sm: 0 4px 12px rgba(0, 0, 0, 0.05);
+  --shadow-md: 0 12px 24px rgba(0, 0, 0, 0.1);
+  --shadow-lg: 0 22px 40px rgba(0, 0, 0, 0.15);
+  --transition-base: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+  --transition-bounce: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  --border-radius: 12px;
+  --card-radius: 20px;
+}
+
+/* Base Styles */
+.ngo-list-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem 1rem;
+  font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+  color: var(--text-primary);
+}
+
+/* Typography */
+.ngo-list-header {
+  text-align: center;
+  margin-bottom: 4rem;
+  position: relative;
+  padding-bottom: 1.5rem;
+}
+
+.ngo-list-header h1 {
+  font-size: clamp(2rem, 5vw, 2.75rem);
+  margin-bottom: 0.75rem;
+  font-weight: 800;
+  background: var(--secondary-gradient);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  letter-spacing: -0.5px;
+  position: relative;
+  display: inline-block;
+}
+
+.ngo-list-header h1::after {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60px;
+  height: 4px;
+  background: var(--secondary-gradient);
+  border-radius: 4px;
+}
+
+.ngo-list-header p {
+  font-size: clamp(1rem, 2vw, 1.2rem);
+  color: var(--text-secondary);
+  max-width: min(90%, 700px);
+  margin: 1rem auto 0;
+  line-height: 1.6;
+}
+
+/* Filter Controls */
+.ngo-filters {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 2.5rem;
+  gap: 1.25rem;
+  flex-wrap: wrap;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  background: rgba(255, 255, 255, 0.95);
+  padding: 1rem;
+  backdrop-filter: blur(10px);
+  border-radius: var(--border-radius);
+  box-shadow: var(--shadow-sm);
+}
+
+.search-box {
+  flex-grow: 1;
+  min-width: min(100%, 300px);
+  position: relative;
+}
+
+.search-box::before {
+  content: "🔍";
+  position: absolute;
+  left: 16px;
+  top: 50%;
+  transform: translateY(-50%);
+  opacity: 0.5;
+  pointer-events: none;
+}
+
+.search-input {
+  width: 100%;
+  padding: 0.9rem 1.2rem 0.9rem 2.5rem;
+  border: none;
+  border-radius: 30px;
+  background: var(--bg-light);
+  box-shadow: var(--shadow-sm);
+  transition: var(--transition-base);
+  font-size: 1rem;
+  color: var(--text-primary);
+}
+
+.search-input:focus {
+  outline: none;
+  box-shadow: 0 6px 18px rgba(52, 152, 219, 0.25);
+  background: white;
+  transform: translateY(-2px);
+}
+
+.search-input::placeholder {
+  color: #a0aec0;
+}
+
+.filter-box {
+  position: relative;
+  min-width: min(100%, 200px);
+}
+
+.cause-filter {
+  width: 100%;
+  padding: 0.9rem 2.5rem 0.9rem 1.2rem;
+  border-radius: 30px;
+  border: none;
+  background: var(--bg-light);
+  box-shadow: var(--shadow-sm);
+  font-size: 1rem;
+  cursor: pointer;
+  transition: var(--transition-base);
+  color: var(--text-primary);
+  appearance: none;
+}
+
+.filter-box::after {
+  content: "▼";
+  position: absolute;
+  right: 16px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 0.7rem;
+  color: #a0aec0;
+  pointer-events: none;
+}
+
+.cause-filter:focus {
+  outline: none;
+  box-shadow: 0 6px 18px rgba(52, 152, 219, 0.25);
+  background: white;
+  transform: translateY(-2px);
+}
+
+/* Status Messages */
+.loading-container,
+.error-message,
+.no-results {
+  text-align: center;
+  padding: 3rem;
+  border-radius: 16px;
+  box-shadow: var(--shadow-md);
+  margin-top: 2rem;
+  background: white;
+}
+
+.error-message {
+  background: #fff5f5;
+  border-left: 4px solid #fc8181;
+}
+
+.error-message p {
+  color: #c53030;
+  margin-bottom: 1rem;
+}
+
+.retry-btn {
+  background: #fc8181;
+  color: white;
+  border: none;
+  padding: 0.5rem 1.5rem;
+  border-radius: 30px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: var(--transition-base);
+}
+
+.retry-btn:hover {
+  background: #e53e3e;
+  transform: translateY(-2px);
+}
+
+.no-results h3 {
+  font-size: 1.8rem;
+  color: var(--text-primary);
+  margin-bottom: 1rem;
+}
+
+.no-results p {
+  color: var(--text-secondary);
+  font-size: 1.1rem;
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+/* NGO Grid Layout */
+.ngo-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+  gap: 2.5rem;
+  margin-top: 2rem;
+}
+
+/* NGO Card Component */
+.ngo-card {
+  background: white;
+  border-radius: var(--card-radius);
+  overflow: hidden;
+  box-shadow: var(--shadow-md);
+  transition: var(--transition-bounce);
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  border: 1px solid rgba(0, 0, 0, 0.05);
+  position: relative;
+  will-change: transform, box-shadow;
+}
+
+.ngo-card:hover {
+  box-shadow: var(--shadow-lg);
+  transform: translateY(-8px);
+}
+
+.ngo-card:focus-visible {
+  outline: 3px solid var(--accent-blue);
+  outline-offset: 3px;
+  transform: translateY(-8px);
+}
+
+.ngo-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(52, 152, 219, 0) 0%, rgba(155, 89, 182, 0.03) 100%);
+  opacity: 0;
+  transition: opacity 0.4s ease;
+  pointer-events: none;
+}
+
+.ngo-card:hover::before {
+  opacity: 1;
+}
+
+/* Card Image/Logo */
+.ngo-logo {
+  height: 180px;
+  background: var(--primary-gradient);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.ngo-logo::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.1));
+  z-index: 1;
+}
+
+.ngo-logo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.ngo-card:hover .ngo-logo img {
+  transform: scale(1.05);
+}
+
+.ngo-initials {
+  width: 110px;
+  height: 110px;
+  background: rgba(255, 255, 255, 0.15);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 3.2rem;
+  font-weight: bold;
+  backdrop-filter: blur(5px);
+  border: 4px solid rgba(255, 255, 255, 0.25);
+  text-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+  transition: var(--transition-bounce);
+}
+
+.ngo-card:hover .ngo-initials {
+  transform: scale(1.05);
+}
+
+/* Card Content */
+.ngo-info {
+  padding: 1.75rem;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+
+.ngo-info h3 {
+  margin: 0 0 0.5rem;
+  color: var(--text-primary);
+  font-size: 1.5rem;
+  font-weight: 700;
+  line-height: 1.3;
+  transition: color 0.3s ease;
+}
+
+.ngo-card:hover .ngo-info h3 {
+  color: var(--accent-blue);
+}
+
+.ngo-email {
+  color: var(--accent-purple);
+  font-size: 0.9rem;
+  margin-bottom: 0.5rem;
+  word-break: break-all;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.ngo-email::before {
+  content: "✉️";
+  font-size: 0.9rem;
+}
+
+.ngo-about {
+  color: #4a5568;
+  font-size: 1rem;
+  line-height: 1.7;
+  margin: 0.6rem 0 1rem;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  flex: 1;
+}
+
+.ngo-address, .ngo-contact {
+  color: #718096;
+  font-size: 0.9rem;
+  margin-bottom: 0.5rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.ngo-address::before {
+  content: "📍";
+}
+
+.ngo-contact::before {
+  content: "📞";
+}
+
+/* Cause Tags */
+.ngo-causes {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+  margin: 1.2rem 0 0.5rem;
+}
+
+.cause-tag {
+  background: rgba(108, 92, 231, 0.1);
+  color: var(--accent-purple);
+  padding: 0.4rem 0.9rem;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  font-weight: 500;
+  transition: var(--transition-base);
+  box-shadow: 0 2px 5px rgba(108, 92, 231, 0.1);
+}
+
+.cause-tag:hover {
+  background: rgba(108, 92, 231, 0.18);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(108, 92, 231, 0.15);
+}
+
+/* Stats Section */
+.ngo-stats {
+  display: flex;
+  border-top: 1px solid #f1f1f1;
+  padding: 1.2rem 1.5rem;
+  background: linear-gradient(to bottom, #f9f9f9, var(--bg-light));
+}
+
+.stat {
+  flex: 1;
+  text-align: center;
+  position: relative;
+  padding: 0.5rem 0;
+}
+
+.stat:not(:last-child)::after {
+  content: "";
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  height: 70%;
+  width: 1px;
+  background: linear-gradient(to bottom, transparent, #e2e8f0, transparent);
+}
+
+.stat span {
+  display: block;
+  color: #718096;
+  font-size: 0.85rem;
+  margin-bottom: 0.4rem;
+}
+
+.stat strong {
+  color: var(--text-primary);
+  font-size: 1.3rem;
+  font-weight: 700;
+  background: var(--secondary-gradient);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  transition: var(--transition-base);
+}
+
+.ngo-card:hover .stat strong {
+  transform: scale(1.05);
+}
+
+/* CTA Button */
+.view-profile-btn {
+  position: absolute;
+  bottom: 15px;
+  right: 15px;
+  background: var(--primary-gradient);
+  color: white;
+  padding: 0.6rem 1.2rem;
+  border-radius: 24px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  box-shadow: 0 4px 10px rgba(108, 92, 231, 0.3);
+  border: none;
+  cursor: pointer;
+  opacity: 0;
+  transform: translateY(10px);
+  transition: var(--transition-base);
+  z-index: 2;
+}
+
+.ngo-card:hover .view-profile-btn {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.view-profile-btn:hover {
+  box-shadow: 0 6px 14px rgba(108, 92, 231, 0.4);
+  transform: translateY(-2px);
+}
+
+/* Accessibility */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+
+/* Responsive Design */
+@media (max-width: 992px) {
+  .ngo-grid {
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 2rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .ngo-filters {
+    flex-direction: column;
+  }
+  
+  .ngo-grid {
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 1.5rem;
+  }
+  
+  .ngo-logo {
+    height: 160px;
+  }
+  
+  .ngo-initials {
+    width: 90px;
+    height: 90px;
+    font-size: 2.5rem;
+  }
+  
+  .ngo-info {
+    padding: 1.3rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .ngo-list-container {
+    padding: 1.5rem 1rem;
+  }
+  
+  .ngo-list-header {
+    margin-bottom: 2.5rem;
+  }
+  
+  .ngo-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+}
+
+
+
+/* Animations */
+@keyframes pulse {
+  0% { box-shadow: 0 0 0 0 rgba(108, 92, 231, 0.4); }
+  70% { box-shadow: 0 0 0 10px rgba(108, 92, 231, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(108, 92, 231, 0); }
+}
+
+/* Performance Optimizations */
+.ngo-card, 
+.search-input, 
+.cause-filter {
+  will-change: transform, box-shadow;
+}
+
+/* Print Styles */
+@media print {
+  .ngo-filters, 
+  .view-profile-btn {
+    display: none;
+  }
+  
+  .ngo-card {
+    break-inside: avoid;
+    box-shadow: none;
+    border: 1px solid #ddd;
+  }
+  
+  .ngo-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}

@@ -1,0 +1,241 @@
+/* Features.css */
+
+.features-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 4rem 2rem;
+    background-color: #f9f9f9;
+}
+
+.features-container h2 {
+    font-size: 2.5rem;
+    color: #3b6c40;
+    margin-bottom: 3rem;
+    text-align: center;
+    position: relative;
+    padding-bottom: 1rem;
+}
+
+.features-container h2::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 4px;
+    background-color: #3b6c40;
+    border-radius: 2px;
+}
+
+.features-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2.5rem;
+}
+
+.feature-card {
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+    padding: 2.5rem 2rem;
+    text-align: center;
+    transition: transform 0.3s ease;
+    border: 2px solid #3b6c40;
+}
+
+.feature-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 8px 20px rgba(59, 108, 64, 0.2);
+}
+
+.feature-card::before {
+    content: "";
+    display: block;
+    width: 60px;
+    height: 60px;
+    background-color: rgba(59, 108, 64, 0.1);
+    border-radius: 50%;
+    margin: 0 auto 1.5rem;
+}
+
+.feature-card:nth-child(1)::before,
+.feature-card:nth-child(2)::before,
+.feature-card:nth-child(3)::before {
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 30px;
+}
+
+.feature-card h3 {
+    font-size: 1.5rem;
+    color: #3b6c40;
+    margin-bottom: 1rem;
+}
+
+.feature-card p {
+    color: #3b6c40;
+    line-height: 1.6;
+}
+
+@media (max-width: 768px) {
+    .features-container h2 {
+        font-size: 2rem;
+    }
+
+    .features-list {
+        grid-template-columns: 1fr;
+    }
+}
+.features-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+  }
+  
+  .features-header {
+    text-align: center;
+    margin-bottom: 3rem;
+  }
+  
+  .features-tabs {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 2rem;
+  }
+  
+  .tab-button {
+    background: none;
+    border: none;
+    padding: 0.75rem 1.5rem;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: all 0.3s;
+    border-bottom: 3px solid transparent;
+  }
+  
+  .tab-button.active {
+    border-bottom: 3px solid #367a3d;
+    font-weight: 600;
+    color: #367a3d;
+  }
+  
+  .features-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+    gap: 2rem;
+    margin-bottom: 3rem;
+  }
+  
+  .feature-card {
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    transition: transform 0.3s ease;
+  }
+  
+  .feature-card:hover {
+    transform: translateY(-5px);
+  }
+  
+  .feature-icon {
+    background-color: #367a3d;
+    color: white;
+    font-size: 2rem;
+    padding: 1.5rem;
+    text-align: center;
+  }
+  
+  .feature-content {
+    padding: 1.5rem;
+  }
+  
+  .feature-description {
+    margin-bottom: 1.5rem;
+  }
+  
+  .tech-details {
+    background-color: #f8f9fa;
+    padding: 1rem;
+    border-radius: 4px;
+    margin-top: 1rem;
+  }
+  
+  .tech-details h4 {
+    margin-top: 0;
+    font-size: 0.9rem;
+    color: #367a3d;
+  }
+  
+  .technical-showcase {
+    background-color: #f8f9fa;
+    padding: 2rem;
+    border-radius: 8px;
+    margin-bottom: 3rem;
+  }
+  
+  .tech-showcase-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 1.5rem;
+    margin-top: 1.5rem;
+  }
+  
+  .tech-showcase-item {
+    background-color: white;
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  }
+  
+  .tech-showcase-item ul {
+    padding-left: 1.5rem;
+    margin-bottom: 0;
+  }
+  
+  .demo-cta {
+    text-align: center;
+    padding: 3rem;
+    background-color: #e9ecef;
+    border-radius: 8px;
+  }
+  
+  .demo-button {
+    background-color: #367a3d;
+    color: white;
+    border: none;
+    padding: 0.75rem 2rem;
+    border-radius: 4px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    margin-top: 1.5rem;
+  }
+  
+  .demo-button:hover {
+    background-color: #367a3d;
+  }
+  
+  /* Responsive Media Queries */
+  @media (max-width: 768px) {
+    .contact-content {
+      grid-template-columns: 1fr;
+    }
+    
+    .contact-info {
+      order: 2;
+    }
+    
+    .contact-form-container {
+      order: 1;
+    }
+    
+    .features-list {
+      grid-template-columns: 1fr;
+    }
+    
+    .tech-showcase-grid {
+      grid-template-columns: 1fr;
+    }
+  }

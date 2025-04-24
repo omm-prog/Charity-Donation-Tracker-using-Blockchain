@@ -1,0 +1,102 @@
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+  }
+  
+  .modal-content {
+    background-color: white;
+    border-radius: 8px;
+    width: 90%;
+    max-width: 500px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+    overflow: hidden;
+  }
+  
+  .modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.5rem;
+    border-bottom: 1px solid #e0e0e0;
+  }
+  
+  .modal-header h2 {
+    margin: 0;
+    color: #4CAF50;
+    font-size: 1.5rem;
+  }
+  
+  .close-button {
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+    color: #757575;
+  }
+  
+  .modal-body {
+    padding: 2rem;
+    text-align: center;
+  }
+  
+  .modal-body p {
+    margin-bottom: 1.5rem;
+    color: #555;
+  }
+  
+  .modal-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+  }
+  
+  .modal-button {
+    padding: 0.8rem 1.5rem;
+    border-radius: 4px;
+    font-size: 1rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+  
+  .login-button {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+  }
+  
+  .login-button:hover {
+    background-color: #388E3C;
+  }
+  
+  .signup-button {
+    background-color: white;
+    color: #4CAF50;
+    border: 1px solid #4CAF50;
+  }
+  
+  .signup-button:hover {
+    background-color: #f0f8f0;
+  }
+  
+  /* Add this to your Navbar.css file */
+  .logout-button {
+    background-color: #f44336;
+    color: white;
+  }
+  
+  .logout-button:hover {
+    background-color: #d32f2f;
+  }
+  
+  .logo-link {
+    text-decoration: none;
+  }
