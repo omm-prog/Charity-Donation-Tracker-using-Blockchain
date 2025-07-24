@@ -3,6 +3,23 @@
 
 <div align="center">
 
+<div align="center">
+
+```
+████████╗██████╗  █████╗  ██████╗██╗  ██╗
+╚══██╔══╝██╔══██╗██╔══██╗██╔════╝██║ ██╔╝
+   ██║   ██████╔╝███████║██║     █████╔╝ 
+   ██║   ██╔══██╗██╔══██║██║     ██╔═██╗ 
+   ██║   ██║  ██║██║  ██║╚██████╗██║  ██╗
+   ╚═╝   ╚═╝  ╚═╝╚═╝  ╚═╝ ╚═════╝╚═╝  ╚═╝
+   
+🌍 DONATION TRACK - Transparent Blockchain Crowdfunding 🚀
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+🔐 Secure • 🌟 Transparent • 💡 Innovative • 🤝 Trustworthy
+```
+
+</div>
+
 [![MIT License](https://img.shields.io/badge/License-MIT-00D4AA?style=for-the-badge&logo=opensourceinitiative&logoColor=white)](https://choosealicense.com/licenses/mit/)
 [![React](https://img.shields.io/badge/React-18.x-61DAFB?style=for-the-badge&logo=react&logoColor=black)](https://reactjs.org/)
 [![Ethereum](https://img.shields.io/badge/Ethereum-Powered-627EEA?style=for-the-badge&logo=ethereum&logoColor=white)](https://ethereum.org/)
@@ -24,9 +41,13 @@
 
 </div>
 
-<p align="center">
-<img src="https://i.imgur.com/RJFAPx3.png" alt="Platform Dashboard" width="85%" style="border-radius: 12px; box-shadow: 0 10px 30px rgba(0,0,0,0.2);">
-</p>
+<div align="center">
+
+![Platform Demo](https://via.placeholder.com/800x400/667eea/ffffff?text=🌟+DonationTrack+Platform+🚀%0A%0ABlockchain+Crowdfunding+Made+Simple%0A%0A💝+Transparent+•+🔐+Secure+•+🌍+Global)
+
+*Experience the future of charitable giving with blockchain transparency*
+
+</div>
 
 ---
 
@@ -521,3 +542,4 @@ This project is licensed under the **MIT License** - see the [LICENSE](LICENSE) 
 **⭐ Star this project if you found it helpful!**
 
 </div>
+
