@@ -3,8 +3,6 @@
 
 <div align="center">
 
-![DonationTrack Hero](https://i.imgur.com/lqDGpGg.png)
-
 [![MIT License](https://img.shields.io/badge/License-MIT-00D4AA?style=for-the-badge&logo=opensourceinitiative&logoColor=white)](https://choosealicense.com/licenses/mit/)
 [![React](https://img.shields.io/badge/React-18.x-61DAFB?style=for-the-badge&logo=react&logoColor=black)](https://reactjs.org/)
 [![Ethereum](https://img.shields.io/badge/Ethereum-Powered-627EEA?style=for-the-badge&logo=ethereum&logoColor=white)](https://ethereum.org/)
